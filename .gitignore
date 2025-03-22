@@ -9,5 +9,5 @@
 !.config/nvim/**
 .config/nvim/lazy-lock.json
 
-!.config/shell
-!.config/shell/**
+!.config/zsh
+!.config/zsh/**
