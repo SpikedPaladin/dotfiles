@@ -1,0 +1,5 @@
+promptToReturnFromSubprocess: false
+
+gui:
+  switchTabsWithPanelJumpKeys: true
+  nerdFontsVersion: "3"
