@@ -1,0 +1,13 @@
+*
+
+!.gitignore
+!.zshrc
+.config
+!.config
+
+!.config/nvim
+!.config/nvim/**
+.config/nvim/lazy-lock.json
+
+!.config/shell
+!.config/shell/**
