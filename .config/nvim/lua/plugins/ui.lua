@@ -12,6 +12,7 @@ return {
 	},
 	opts = {
 	    options = {
+		separator_style = "slant",
 		offsets = {
 		    {
 			filetype = "NvimTree",
