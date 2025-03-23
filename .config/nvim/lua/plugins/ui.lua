@@ -1,8 +1,5 @@
 return {
-    {
-	"neovim/nvim-lspconfig",
-    },
-    {
+   {
 	"akinsho/bufferline.nvim",
 	event = "VeryLazy",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
