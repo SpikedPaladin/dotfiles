@@ -1,13 +1,27 @@
 return {
     {
-	"nvim-tree/nvim-tree.lua",
-	lazy = false,
-	dependencies = {
-	    "nvim-tree/nvim-web-devicons",
+	"neovim/nvim-lspconfig",
+    },
+    {
+	"akinsho/bufferline.nvim",
+	event = "VeryLazy",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	keys = {
+	    { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+	    { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
 	},
-	config = function()
-	    require("nvim-tree").setup()
-	end,
+	opts = {
+	    options = {
+		offsets = {
+		    {
+			filetype = "NvimTree",
+			text = "File Explorer",
+			highlight = "Directory",
+			separator = true
+		    }
+		}
+	    }
+	}
     },
     {
         "nvim-lualine/lualine.nvim",
@@ -15,14 +29,16 @@ return {
 	opts = {
             options = {
                 theme = "auto"
-	    }
+	    },
+	    extensions = { "nvim-tree" }
 	}
     },
     {
         "folke/noice.nvim",
 	event = "VeryLazy",
 	dependencies = {
-            "MunifTanjim/nui.nvim"
+            "MunifTanjim/nui.nvim",
+	    "rcarriga/nvim-notify"
 	},
 	opts = {
             presets = {
