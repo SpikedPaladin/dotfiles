@@ -2,7 +2,16 @@ return {
     {
 	"neovim/nvim-lspconfig",
 	config = function()
+	    vim.diagnostic.config({
+		signs = {
+		    text = {
+			[vim.diagnostic.severity.WARN] = '',
+			[vim.diagnostic.severity.ERROR] = ""
+		    }
+		}
+	    })
 	    require("lspconfig").lua_ls.setup({})
+	    require("lspconfig").vala_ls.setup({})
 	end,
     },
     {
@@ -33,10 +42,16 @@ return {
 	opts = function()
 	    local cmp = require("cmp")
 	    return {
+		window = {
+		    completion = cmp.config.window.bordered(),
+		    documentation = cmp.config.window.bordered()
+		},
 		completion = {
 		    completeopt = "menu,menuone,noinsert",
 		},
 		mapping = cmp.mapping.preset.insert({
+		    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+		    ["<C-f>"] = cmp.mapping.scroll_docs(4),
 		    ["<C-Space>"] = cmp.mapping.complete(),
 		    ["<CR>"] = cmp.mapping.confirm()
 		}),
