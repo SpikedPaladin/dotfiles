@@ -1,10 +1,6 @@
 local opt = vim.opt
 local api = vim.api
 local cmd = vim.cmd
-local g = vim.g
-
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
 
 api.nvim_set_option("clipboard", "unnamedplus")
 
