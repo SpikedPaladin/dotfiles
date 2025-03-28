@@ -12,6 +12,7 @@ return {
 	    })
 	    require("lspconfig").lua_ls.setup({})
 	    require("lspconfig").vala_ls.setup({})
+	    require("lspconfig").blueprint_ls.setup({})
 	end,
     },
     {
