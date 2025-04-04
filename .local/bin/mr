@@ -1,0 +1,29 @@
+#!/bin/bash
+if [ ! -f meson.build ]; then
+    exit 1
+fi
+
+plugin_folder=~/.local/share/nvim/meson
+
+if [ ! -f $plugin_folder ]; then
+    mkdir $plugin_folder
+fi
+
+name=$(grep -A5 "project(" meson.build | grep -m1 "'[^']*'" | sed "s/.*'\([^']*\)'.*/\1/")
+project_folder=~/.local/share/nvim/meson/$name
+
+if [ ! -f $project_folder ]; then
+    mkdir $project_folder
+fi
+
+install_folder=$project_folder/install
+
+branch=$(git branch --show-current)
+build_folder=$project_folder/builds/$branch
+
+if [ ! -f $build_folder ]; then
+    meson setup --prefix=$install_folder $build_folder
+fi
+
+meson install -C $build_folder
+$install_folder/bin/gungnir

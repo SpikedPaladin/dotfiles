@@ -5,6 +5,10 @@
 .config
 !.config
 
+!.local
+!.local/bin
+!.local/bin/**
+
 !.config/nvim
 !.config/nvim/**
 .config/nvim/lazy-lock.json
