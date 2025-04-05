@@ -3,7 +3,7 @@ if [ ! -f meson.build ]; then
     exit 1
 fi
 
-plugin_folder=~/.local/share/nvim/meson
+plugin_folder=$HOME/.local/share/nvim/meson
 
 if [ ! -f $plugin_folder ]; then
     mkdir $plugin_folder
@@ -26,4 +26,7 @@ if [ ! -f $build_folder ]; then
 fi
 
 meson install -C $build_folder
-$install_folder/bin/gungnir
+
+export GSETTINGS_SCHEMA_DIR="$install_folder/share/glib-2.0/schemas:${GSETTINGS_SCHEMA_DIR}"
+
+(cd ~ && $install_folder/bin/${name,,})
