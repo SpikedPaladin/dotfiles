@@ -4,7 +4,8 @@ return {
         event = "VeryLazy",
         opts = {
             presets = {
-                command_palette = true
+                command_palette = true,
+                lsp_doc_border = true
             }
         }
     }

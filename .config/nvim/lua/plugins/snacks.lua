@@ -53,12 +53,20 @@ return {
             { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
             { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
             { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+            -- Search
+            { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+            { "<leader>sD", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
+            { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
             -- Buffer
-            { "<leader>bd", function() Snacks.bufdelete() end, desc = "Buffer Delete" },
+            { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
             -- LSP
             { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
             { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
             { "gr", function() Snacks.picker.lsp_references() end, desc = "References" },
+            { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+            { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+            { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+            { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
             -- Other
             { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
             { "<C-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
