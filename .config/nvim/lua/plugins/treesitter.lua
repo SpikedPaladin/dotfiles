@@ -10,8 +10,8 @@ return {
         end,
         cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         opts = {
-            highlight = { enabled = true },
-            --indent = { enabled = true }
+            highlight = { enable = true },
+            indent = { enable = true }
         },
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)

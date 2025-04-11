@@ -57,6 +57,7 @@ return {
             { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
             { "<leader>sD", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
             { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
+            { "<leader>sh", function() Snacks.picker.help() end, desc = "Help" },
             -- Buffer
             { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
             -- LSP

@@ -1,22 +1,14 @@
-local which_key = require("which-key")
+local wk = require("which-key")
 
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup('user_lsp_attach', { clear = true }),
     callback = function(event)
-        local opts = { buffer = event.buf }
-
-        local mappings = {
-            ["<leader>"] = {
-                l = {
-                    name = "LSP",
-                    a = { vim.lsp.buf.code_action, "Code Action" },
-                    r = { vim.lsp.buf.rename, "Rename Symbol" },
-                    d = { vim.diagnostic.open_float, "Diagnostic Float" }
-                }
-            }
-        }
-
-        which_key.register(mappings, opts)
+        wk.add({
+            { "<leader>l", group = "LSP", buffer = event.buf },
+            { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", buffer = event.buf },
+            { "<leader>ld", vim.diagnostic.open_float, desc = "Diagnostic Float", buffer = event.buf },
+            { "<leader>lr", vim.lsp.buf.rename, desc = "Rename Symbol", buffer = event.buf }
+        })
     end
 })
 
