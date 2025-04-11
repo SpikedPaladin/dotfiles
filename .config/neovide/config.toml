@@ -1,0 +1,5 @@
+frame = "none"
+
+[font]
+normal = ["JetbrainsMono Nerd Font"]
+size = 12

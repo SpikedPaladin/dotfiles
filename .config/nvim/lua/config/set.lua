@@ -19,3 +19,5 @@ vim.opt.scrolloff = 4
 
 vim.opt.wrap = false
 vim.g.editorconfig = false
+
+vim.g.neovide_normal_opacity = 0
