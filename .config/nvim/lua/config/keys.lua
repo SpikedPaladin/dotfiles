@@ -12,7 +12,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 
+wk.add({
+    { "<leader>m", group = "meson" },
+    { "<leader>mb", "<Cmd>Meson build<CR>", desc = "Meson Build" },
+    { "<leader>mi", "<Cmd>Meson install<CR>", desc = "Meson Install" },
+    { "<leader>mr", "<Cmd>Meson run<CR>", desc = "Meson Auto" },
+    { "<leader>ml", "<Cmd>Lazy reload meson.nvim<CR>", desc = "Reload plugin" }
+})
 
+vim.keymap.set("n", "q:", "<nop>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

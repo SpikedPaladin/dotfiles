@@ -17,5 +17,28 @@ event.mappings["User LazyFile"] = event.mappings.LazyFile
 
 require("lazy").setup({
     spec = "plugins",
-    change_detection = { notify = false }
+    change_detection = { notify = false },
+    ui = {
+        border = "rounded",
+    },
+    performance = {
+        rtp = {
+            disabled_plugins = {
+                "gzip",
+                "matchit",
+                "matchparen",
+                "netrwPlugin",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+                "editorconfig",
+                "man",
+                "osc52",
+                "rplugin",
+                "shada",
+                "spellfile"
+            }
+        }
+    }
 })
