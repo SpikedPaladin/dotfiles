@@ -6,7 +6,6 @@ return {
             "nvim-neotest/nvim-nio"
         },
         event = "VeryLazy",
-        opts = {},
         keys = {
             "<leader>rb",
             "<cmd>Lazy reload meson.nvim<cr>",
@@ -39,6 +38,7 @@ return {
             library = {
                 "${3rd}/luassert/library",
                 "${3rd}/busted/library",
+                "${3rd}/luv/library",
                 "meson.nvim",
                 "nvim-nio",
                 "pathlib.nvim",
