@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pushd ~
+mv .zgit .git
+
+lazygit
+
+mv .git .zgit
+popd
