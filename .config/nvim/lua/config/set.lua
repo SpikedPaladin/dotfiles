@@ -1,24 +1,25 @@
 vim.cmd.colorscheme("catppuccin")
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.o.nu = true
+vim.o.relativenumber = true
 
 -- Turn off the stupidest thing in the entire universe
 vim.g.meson_recommended_style = 0
+vim.highlight.priorities.semantic_tokens = 75
 
 -- Tabs to 4 spaces
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = false
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smartindent = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+vim.o.hlsearch = false
+vim.o.incsearch = true
 
-vim.opt.scrolloff = 4
+vim.o.scrolloff = 4
 
-vim.opt.wrap = false
+vim.o.wrap = false
 vim.g.editorconfig = false
 
 vim.g.neovide_normal_opacity = 0
